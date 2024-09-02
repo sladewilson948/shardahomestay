@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+.main-header
+{
+    height: 100vh;
+}
+
+.title
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: antiquewhite;
+    font-size: 100px;
+    height: 100vh;
+}
+
+
+.header
+{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    font-family: "Sevillana", cursive;
+    font-weight: 100;
+    font-style: normal;
+    color: rgb(228, 215, 215);
+    background-color: rgb(26, 26, 23);
+    font-size: 30px;
+
+}
+
+
+
+.header h3
+{
+    
+    width: 80%;
+    padding: 20px;
+}
+
+.video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /* Ensures the video covers the entire container */
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: brightness(0.5); /* Apply the filter to the video */
+}
+
+.content
+
+{
+    height: 100vh;
+    background-color: rgb(26, 26, 23);
+    color: rgb(228, 215, 215);
+}
+
+.intro
+{
+    
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    font-family: "Sevillana", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 42px;
+    align-items: center;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+}
+
+.carousel img {
+    width: 80%;
+    height: 800px;
+    width: 600px;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
