@@ -249,7 +249,7 @@ body {
     }
 
     .header h1 {
-        font-size: 40px;
+        font-size: 30px;
     }
 
     .header h2
@@ -258,15 +258,15 @@ body {
     }
 
     .header h3 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .intro {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .carousel img {
-        height: 550px;
+        height: 500px;
         padding: 12px;
         /* Adjust height for very small 
         
