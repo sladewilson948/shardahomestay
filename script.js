@@ -15,3 +15,19 @@ function moveSlide(direction) {
     const newTransformValue = -currentIndex * 100;
     document.querySelector('.carousel').style.transform = `translateX(${newTransformValue}%)`;
 }
+
+document.addEventListener('wheel', (event) => {
+    const delta = Math.sign(event.deltaY);
+    const sections = document.querySelectorAll('body > div');
+    const currentSection = Array.from(sections).findIndex(section => section.getBoundingClientRect().top === 0);
+    
+    if (delta > 0) {
+        if (currentSection < sections.length - 1) {
+            sections[currentSection + 1].scrollIntoView({ behavior: 'smooth' });
+        }
+    } else {
+        if (currentSection > 0) {
+            sections[currentSection - 1].scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+});

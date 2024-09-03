@@ -1,87 +1,98 @@
+/* Importing fonts */
 @import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sevillana&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-*{
-
+/* Reset margin, padding, and box-sizing */
+* {
     margin: 0;
     padding: 0;
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
-.main-header
-{
-    height: 100vh;
+/* Full viewport height sections */
+html, body {
+    height: 100%;
+    overflow: hidden; /* Prevent horizontal scrolling */
 }
 
-.title
-{
+body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+}
+
+/* Each section to cover full viewport height */
+.main-header,
+.header,
+.content,
+.amenities,
+.footer {
+    min-height: 100vh;
+    display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+/* Main header styling */
+.main-header {
+    position: relative;
+}
+
+.title {
     color: antiquewhite;
     font-size: 100px;
-    height: 100vh;
+    z-index: 1;
 }
 
-
-.header
-{
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    font-family: "Sevillana", cursive;
-    font-weight: 100;
-    font-style: normal;
-    color: rgb(228, 215, 215);
-    background-color: rgb(26, 26, 23);
-    font-size: 30px;
-
-}
-
-
-
-.header h3
-{
-    
-    width: 80%;
-    padding: 20px;
-}
-
+/* Video background styling */
 .video-background {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
-    object-fit: cover; /* Ensures the video covers the entire container */
-    transform: translate(-50%, -50%);
+    height: 100%;
+    object-fit: cover;
     z-index: -1;
-    filter: brightness(0.5); /* Apply the filter to the video */
+    filter: brightness(0.5);
 }
 
-.content
+/* Header styling */
+.header {
+    flex-direction: column;
+    font-family: "Sevillana", cursive;
+    color: rgb(228, 215, 215);
+    background-color: rgb(26, 26, 23);
+    font-size: 20px;
+    text-align: center;
+}
 
-{
-    height: 100vh;
+.header h1 {
+    font-size: 60px;
+}
+
+.header h3 {
+    width: 80%;
+    padding: 20px;
+    font-size: 40px;
+    font-weight: 200;
+}
+
+/* Content section styling */
+.content {
+    display: flex;
+    flex-direction: column;
     background-color: rgb(26, 26, 23);
     color: rgb(228, 215, 215);
 }
 
-.intro
-{
-    
+.intro {
     height: 10vh;
-    display: flex;
-    justify-content: center;
     font-family: "Sevillana", cursive;
-    font-weight: 700;
-    font-style: normal;
+    font-weight: 200;
     font-size: 42px;
-    align-items: center;
+    text-align: center;
 }
 
+/* Carousel styling */
 .carousel-container {
     position: relative;
     max-width: 600px;
@@ -99,11 +110,11 @@
 }
 
 .carousel img {
-    width: 80%;
-    height: 800px;
-    width: 600px;
+    width: 100%;
+    height: 800px; /* Adjust height if needed */
 }
 
+/* Navigation buttons styling */
 .prev, .next {
     position: absolute;
     top: 50%;
@@ -123,4 +134,132 @@
 
 .next {
     right: 10px;
+}
+
+/* Amenities section styling */
+.amenities {
+    display: flex;
+    flex-direction: column;
+    color: rgb(228, 215, 215);
+    text-align: center;
+    background-color: rgb(26, 26, 23);
+    font-family: "Sevillana", cursive;
+    font-size: 22px;
+}
+
+.items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.items ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 13px;
+    list-style: none;
+    padding: 0;
+}
+
+.items ul li {
+    color: black;
+    cursor: pointer;
+    background-color: #f0a608;
+    padding: 10px;
+    height: 80px;
+    width: 200px;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.items ul li:hover
+{
+    background-color: #e4951e;
+}
+
+.footer
+{
+    background-color: rgb(26, 26, 23);
+}
+
+.footer .booking
+{
+    font-size: 50px;
+    color: antiquewhite;
+}
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .title {
+        font-size: 60px;
+    }
+
+    .header h1 {
+        font-size: 40px;
+    }
+
+    .header h3 {
+        font-size: 28px;
+    }
+
+    .intro {
+        font-size: 32px;
+    }
+
+    .carousel img {
+        height: 400px; /* Adjust height for smaller screens */
+    }
+
+    .items ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .items ul li {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .footer .booking {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 40px;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .header h3 {
+        font-size: 22px;
+    }
+
+    .intro {
+        font-size: 24px;
+    }
+
+    .carousel img {
+        height: 300px; /* Adjust height for very small screens */
+    }
+
+    .items ul {
+        grid-template-columns: 1fr;
+    }
+
+    .items ul li {
+        font-size: 14px;
+    }
+
+    .footer .booking {
+        font-size: 20px;
+    }
 }
